@@ -2,7 +2,7 @@
 A macOS library that handles window to screen edge
 
 ## Install
-In your macOS project, **File** -> **Add Package Dependencies ...**, search `https://github.com/boybeak/WinDragger.git`
+In your macOS project, **File** -> **Add Package Dependencies ...**, search `https://github.com/boybeak/WinToEdge.git`
 
 ## Usage
 ```swift
