@@ -9,7 +9,11 @@ public enum Edge {
 
 public extension NSWindow {
     
-    public func catchToEdge(edges: [Edge], legacy: CGFloat = 48) {
+    public func snapToEdge(edges: [Edge], legacy: CGFloat = 48) {
+        
+        if edges.isEmpty {
+            return
+        }
         
         if legacy <= 0 {
             fatalError("legacy can not be <= 0")
@@ -64,6 +68,11 @@ public extension NSWindow {
     }
     
     public func escapeFromEdge(edges: [Edge]) {
+        
+        if edges.isEmpty {
+            return
+        }
+        
         guard let screenFrame = screen?.visibleFrame else { return }
         var newFrame = frame
         
@@ -90,7 +99,7 @@ public extension NSWindow {
         
         // 从底部弹出
         if edges.contains(.bottom) {
-            if screenFrame.minY < newFrame.minY {
+            if newFrame.minY < screenFrame.minY {
                 newFrame.origin.y = screenFrame.minY
             }
         }
