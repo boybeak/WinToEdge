@@ -3,13 +3,13 @@
 
 import AppKit
 
-public enum Edge {
+public enum EdgePosition {
     case left, top, right, bottom
 }
 
 public extension NSWindow {
     
-    public func snapToEdge(edges: [Edge], legacy: CGFloat = 48) {
+    public func snapToEdge(edges: [EdgePosition], legacy: CGFloat = 48) {
         
         if edges.isEmpty {
             return
@@ -67,7 +67,7 @@ public extension NSWindow {
         setFrame(newFrame, display: true, animate: true)
     }
     
-    public func escapeFromEdge(edges: [Edge]) {
+    public func escapeFromEdge(edges: [EdgePosition]) {
         
         if edges.isEmpty {
             return
